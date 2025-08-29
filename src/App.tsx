@@ -56,7 +56,7 @@ function App() {
 
           <div className="text-center">
             <button
-              className={`btn ${outputText ? 'btn-primary' : 'btn-disabled'} btn-lg w-full max-w-sm`}
+              className={`btn ${outputText ? '' : 'btn-disabled'} btn-lg w-full max-w-sm`}
               onClick={handleCopy}
               disabled={!outputText}
             >
