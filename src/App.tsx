@@ -39,7 +39,7 @@ function App() {
           <fieldset className="fieldset">
             <legend className="fieldset-legend text-xl font-semibold">Input</legend>
             <textarea
-              className="textarea h-48 w-full textarea-xl"
+              className="textarea h-48 w-full textarea-lg"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             />
@@ -48,7 +48,7 @@ function App() {
           <fieldset className="fieldset">
             <legend className="fieldset-legend text-xl font-semibold">Output</legend>
             <textarea
-              className="textarea h-48 w-full textarea-xl"
+              className="textarea h-48 w-full textarea-lg"
               value={outputText}
               readOnly
             />
