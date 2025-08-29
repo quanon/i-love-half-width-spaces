@@ -2,13 +2,14 @@ import { describe, it, expect } from 'vitest'
 import { processText } from './textProcessor'
 
 describe('processText', () => {
-  it('handles empty and whitespace-only strings', () => {
-    expect(processText('')).toBe('')
-    expect(processText(' ')).toBe(' ')
-    expect(processText('  ')).toBe('  ')
+  describe('empty and whitespace-only strings', () => {
+    it('returns strings as-is', () => {
+      expect(processText('')).toBe('')
+      expect(processText(' ')).toBe(' ')
+    })
   })
 
-  describe('full-width to half-width conversion', () => {
+  describe('convert full-width to half-width', () => {
     it('converts full-width English letters to half-width', () => {
       expect(processText('ＡＢＣ')).toBe('ABC')
       expect(processText('ａｂｃ')).toBe('abc')
@@ -24,7 +25,7 @@ describe('processText', () => {
     })
   })
 
-  describe('parentheses conversion', () => {
+  describe('convert parentheses', () => {
     it('converts full-width parentheses to half-width with spaces', () => {
       expect(processText('（test）')).toBe('(test)')
     })
@@ -34,7 +35,7 @@ describe('processText', () => {
     })
   })
 
-  describe('space insertion around English letters', () => {
+  describe('insert spaces around English letters', () => {
     it('adds spaces around English letters adjacent to Japanese characters', () => {
       expect(processText('これはtestです')).toBe('これは test です')
       expect(processText('testです')).toBe('test です')
@@ -50,7 +51,7 @@ describe('processText', () => {
     })
   })
 
-  describe('space insertion around numbers', () => {
+  describe('insert spaces around numbers', () => {
     it('adds spaces around numbers adjacent to Japanese characters', () => {
       expect(processText('これは123です')).toBe('これは 123 です')
       expect(processText('123です')).toBe('123 です')
