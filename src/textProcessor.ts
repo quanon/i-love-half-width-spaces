@@ -51,8 +51,8 @@ export function processText(text: string): string {
     return result;
   });
 
-  // 複数の連続するスペースを単一のスペースに統合する。
-  processed = processed.replace(/\s+/g, ' ');
+  // 複数の連続する半角スペースを単一の半角スペースに統一する。
+  processed = processed.replace(/ +/g, ' ');
 
   return processed.trim();
 }
