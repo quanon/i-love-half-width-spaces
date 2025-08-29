@@ -3,6 +3,11 @@ export function processText(text: string): string {
 
   let processed = text;
 
+  // 全角英数字を半角英数字に変換する。
+  processed = processed.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (char) => {
+    return String.fromCharCode(char.charCodeAt(0) - 0xFEE0);
+  });
+
   processed = processed.replace(/（/g, ' (').replace(/）/g, ') ');
 
   const japaneseChar = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF\u3400-\u4DBF]/;
