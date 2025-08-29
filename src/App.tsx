@@ -30,25 +30,25 @@ function App() {
   return (
     <div className="min-h-screen bg-base-100 p-4 pb-8" style={{
       paddingTop: 'max(1rem, env(safe-area-inset-top))',
-      paddingBottom: 'max(2rem, env(safe-area-inset-bottom))',
+      paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
       paddingLeft: 'max(1rem, env(safe-area-inset-left))',
       paddingRight: 'max(1rem, env(safe-area-inset-right))'
     }}>
       <div className="max-w-2xl mx-auto">
         <div className="space-y-6">
           <fieldset className="fieldset">
-            <legend className="fieldset-legend">Input</legend>
+            <legend className="fieldset-legend text-xl font-semibold">Input</legend>
             <textarea
-              className="textarea h-48 w-full"
+              className="textarea h-48 w-full textarea-xl"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             />
           </fieldset>
 
           <fieldset className="fieldset">
-            <legend className="fieldset-legend">Output</legend>
+            <legend className="fieldset-legend text-xl font-semibold">Output</legend>
             <textarea
-              className="textarea h-48 w-full"
+              className="textarea h-48 w-full textarea-xl"
               value={outputText}
               readOnly
             />
