@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { processText } from './textProcessor'
+import { processText } from './processText'
 
 describe('processText', () => {
   describe('empty and whitespace-only strings', () => {

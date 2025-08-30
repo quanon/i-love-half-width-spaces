@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { processText } from './textProcessor'
+import { processText } from './processText'
 import './App.css'
 
 function App() {
